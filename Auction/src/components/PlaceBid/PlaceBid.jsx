@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useApi } from "../context/ApiContext";
-import { useUserId } from "../context/UserIdContext"; // ✅ Import UserIdContext
-import "../styles/PlaceBid.css";
+import { useApi } from "../../context/ApiContext";
+import { useUserId } from "../../context/UserIdContext"; // ✅ Import UserIdContext
+import "./PlaceBid.css";
 
 function PlaceBid({ isAuthenticated }) {
   const { api } = useApi();

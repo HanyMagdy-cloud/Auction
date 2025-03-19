@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useApi } from "../context/ApiContext"; // Import API Context
-import "../styles/Login.css";
+import { useApi } from "../../context/ApiContext"; // Import API Context
+import "./Login.css";
 
 function Login({ setIsAuthenticated }) {
   const { api, updateToken } = useApi(); // Use API context

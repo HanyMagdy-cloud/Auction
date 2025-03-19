@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/DeleteAuction.css"; // Import CSS for styling
+import "./DeleteAuction.css"; // Import CSS for styling
 import { Link } from "react-router-dom";
-import { useUserId } from "../context/UserIdContext"; // ✅ Import UserIdContext for User ID
+import { useUserId } from "../../context/UserIdContext"; // ✅ Import UserIdContext for User ID
 
 function DeleteAuction({ isAuthenticated }) {
   const [auctionId, setAuctionId] = useState("");

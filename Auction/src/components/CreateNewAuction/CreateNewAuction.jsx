@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { useApi } from "../context/ApiContext";
-import { useUserId } from "../context/UserIdContext";
+import { useApi } from "../../context/ApiContext";
+import { useUserId } from "../../context/UserIdContext";
+import '..//CreateNewAuction/CreateNewAuction.css'
 
-function UpdateAuction() {
+function CreateNewAuction() {
   const { api } = useApi();
   const { userId } = useUserId(); // Fetch User ID from context
-  const [auctionId, setAuctionId] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [startingPrice, setStartingPrice] = useState("");
+  const [price, setPrice] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    console.log("User ID from Context in UpdateAuction:", userId); // ✅ Check if User ID is received
+    console.log("User ID from Context in CreateNewAuction:", userId); // ✅ Check if User ID is received
   }, [userId]);
 
   const handleSubmit = async (e) => {
@@ -26,61 +26,54 @@ function UpdateAuction() {
     }
 
     try {
-      const response = await api.put(
-        `/Auction/${auctionId}/Update_Auction?userId=${userId}&Title=${title}&Description=${description}&StartingPrice=${startingPrice}&StartDate=${startDate}&EndDate=${endDate}`
+      const response = await api.post(
+        `/Auction/Create_Auction?Title=${title}&Description=${description}&Price=${price}&StartDate=${startDate}&EndDate=${endDate}&CreatedBy=${userId}`
       );
 
-      setMessage("Auction updated successfully!");
-      console.log("Auction Updated:", response.data);
+      setMessage("Auction created successfully!");
+      console.log("Auction Created:", response.data);
     } catch (error) {
-      setMessage("Failed to update auction. Please try again.");
-      console.error("Error updating auction:", error);
+      setMessage("Failed to create auction. Please try again.");
+      console.error("Error creating auction:", error);
     }
   };
 
   return (
     <div>
-      <h2>Update Auction</h2>
+      <h2>Create New Auction</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Auction ID to Update"
-          value={auctionId}
-          onChange={(e) => setAuctionId(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="New Title"
+          placeholder="Auction Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
         />
         <input
           type="text"
-          placeholder="New Description"
+          placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
         <input
           type="number"
-          placeholder="New Starting Price"
-          value={startingPrice}
-          onChange={(e) => setStartingPrice(e.target.value)}
+          placeholder="Starting Price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
           required
         />
         <input
           type="date"
-          placeholder="New Start Date"
+          placeholder="Start Date"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
           required
         />
         <input
           type="date"
-          placeholder="New End Date"
+          placeholder="End Date"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
           required
@@ -93,10 +86,10 @@ function UpdateAuction() {
           readOnly
         />
 
-        <button type="submit">Update Auction</button>
+        <button type="submit">Create Auction</button>
       </form>
     </div>
   );
 }
 
-export default UpdateAuction;
+export default CreateNewAuction;

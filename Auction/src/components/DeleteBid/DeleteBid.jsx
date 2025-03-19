@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useApi } from "../context/ApiContext";
-import { useUserId } from "../context/UserIdContext"; // ✅ Import UserIdContext
-import "../styles/DeleteBid.css";
+import { useApi } from "../../context/ApiContext";
+import { useUserId } from "../../context/UserIdContext"; // ✅ Import UserIdContext
+import "./DeleteBid.css";
 
 function DeleteBid({ isAuthenticated }) {
   const { api } = useApi();

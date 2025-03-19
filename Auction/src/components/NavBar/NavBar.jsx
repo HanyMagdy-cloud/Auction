@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useUser } from "../context/UserContext"; // ✅ Import User Context
-import "../styles/NavBar.css"; // ✅ Import styles
+import { useUser } from "../../context/UserContext"; // ✅ Import User Context
+import "./NavBar.css"; // ✅ Import styles
 
 function NavBar() {
   const { token } = useUser(); // ✅ Get token from User Context

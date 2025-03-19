@@ -1,10 +1,10 @@
+// src/components/GetBidsForAuction.jsx
 import { useState } from "react";
-import { useBid } from "../context/BidContext"; // ✅ Import Bid Context
-import { useUser } from "../context/UserContext"; // ✅ Import User Context
-import "../styles/GetBidsForAuction.css"; // ✅ Import CSS for styling
+import { fetchBidsForAuction } from "../../Services/bidService"; // ✅ Import service
+import { useUser } from "../../context/UserContext"; // ✅ Import User Context
+import "./GetBidsForAuction.css"; // ✅ Import CSS for styling
 
 function GetBidsForAuction() {
-  const { getBidsForAuction } = useBid(); // ✅ Fetch bids from BidContext
   const { token } = useUser(); // ✅ Get authentication token
   const [auctionId, setAuctionId] = useState("");
   const [bids, setBids] = useState([]);
@@ -23,10 +23,10 @@ function GetBidsForAuction() {
     }
 
     try {
-      const bidData = await getBidsForAuction(auctionId);
+      const bidData = await fetchBidsForAuction(auctionId, token); // ✅ Call service function
       console.log("Fetched Bids:", bidData); // ✅ Debugging: Check console if data is received
 
-      if (bidData.length === 0 || !bidData) {
+      if (!bidData || bidData.length === 0) {
         setMessage(`❌ No bids found for Auction ID: ${auctionId}`);
         setBids([]);
       } else {

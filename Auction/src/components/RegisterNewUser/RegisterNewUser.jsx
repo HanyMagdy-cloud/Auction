@@ -1,13 +1,14 @@
+// src/components/RegisterNewUser.jsx
 import { useState } from "react";
-import axios from "axios";
-import "../styles/RegisterNewUser.css"; // Import CSS for styling
+import { registerUser } from "../../Services/userService"; // ✅ Import service
+import "./RegisterNewUser.css"; // ✅ Import CSS for styling
 
 function RegisterNewUser() {
   const [username, setUsername] = useState(""); // Store username input
   const [password, setPassword] = useState(""); // Store password input
   const [message, setMessage] = useState(null); // Store success/error messages
 
-  // Function to handle user registration
+  // ✅ Function to handle user registration
   const handleRegister = async () => {
     if (!username || !password) {
       setMessage("❌ Please enter both username and password.");
@@ -15,11 +16,7 @@ function RegisterNewUser() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:5074/api/User/register_New_User",
-        { username, password } // Send username & password as an object
-      );
-
+      await registerUser(username, password); // ✅ Call service function
       setMessage("✅ Registration successful! You can now log in.");
       setUsername(""); // Clear input fields
       setPassword("");

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useAuction } from "../context/AuctionContext"; // ✅ Import Auction Context
-import { useBid } from "../context/BidContext"; // ✅ Import Bid Context
-import "../styles/AuctionList.css"; // ✅ Import styles
+import { useAuction } from "../../context/AuctionContext"; // ✅ Import Auction Context
+import { useBid } from "../../context/BidContext"; // ✅ Import Bid Context
+//import "../styles/AuctionList.css"; // ✅ Import styles
+import "../AuctionList/AuctionList.css"
 
 function AuctionList() {
   const { getAllAuctions } = useAuction(); // ✅ Fetch all auctions

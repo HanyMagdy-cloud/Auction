@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "../styles/SearchById.css"; // Import the CSS file for styling
+import "./SearchById.css"; // Import the CSS file for styling
 import { Link } from "react-router-dom";
 
 function SearchById({ isAuthenticated }) {

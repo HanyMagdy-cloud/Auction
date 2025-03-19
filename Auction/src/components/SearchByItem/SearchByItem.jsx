@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useApi } from "../context/ApiContext"; // ✅ Import API Context
-import "../styles/SearchByItem.css"; // ✅ Import styles
+import { useApi } from "../../context/ApiContext"; // ✅ Import API Context
+import "./SearchByItem.css"; // ✅ Import styles
 import { Link } from "react-router-dom";
 
 function SearchByItem({ isAuthenticated }) {
