@@ -1,0 +1,51 @@
+/* Container for registration */
+.register-container {
+    text-align: center;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Input fields */
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #110101;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 80%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin: auto;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Success/Error messages */
+.message {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.message.error {
+    color: red;
+}
+
+.message.success {
+    color: green;
+}

@@ -1,0 +1,48 @@
+/* Container for deleting auction */
+.delete-auction-container {
+    text-align: center;
+    width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Input fields */
+input {
+    width: 95%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2121f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #112093;
+}
+
+/* Success messages */
+.success {
+    color: green;
+    font-size: 20px;
+}
+
+/* Error messages */
+.error {
+    color: red;
+    font-size: 20px;
+}

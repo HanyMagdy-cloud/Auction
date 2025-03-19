@@ -1,0 +1,87 @@
+/* src/components/NavBar.css */
+
+nav {
+    background-color: #3498db;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow links to wrap to the next line on smaller screens */
+    justify-content: center; /* Center links horizontally */
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px; /* Increased margin for better spacing on smaller screens */
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #2980b9;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  nav a:hover {
+    background-color: #1c6691;
+    transform: scale(1.05);
+  }
+  
+  nav a.active {
+    background-color: #e74c3c;
+  }
+  
+  nav a:nth-child(even):hover {
+      background-color: #27ae60;
+  }
+  
+  nav a:nth-child(odd):hover {
+      background-color: #f39c12;
+  }
+
+/* ✅ Style for disabled links */
+.disabled-link {
+  color: gray; /* Light grey color */
+  pointer-events: none; /* Prevent clicking */
+  opacity: 0.5; /* Make it look disabled */
+  cursor: not-allowed; /* Show a disabled cursor */
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  padding: 8px 12px;
+}
+/* ✅ Style for read-only links (when user is not logged in) */
+.read-only {
+  color: gray; /* Light grey color */
+  opacity: 0.6; /* Make it look disabled */
+  pointer-events: none; /* Prevent clicking */
+  cursor: not-allowed; /* Show a disabled cursor */
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+
+
+
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column; /* Stack links vertically on smaller screens */
+      align-items: center; /* Center links vertically */
+    }
+  
+    nav a {
+      margin: 5px 0; /* Adjust margin for vertical stacking */
+      width: 80%; /* Make links take up most of the width */
+      text-align: center; /* center the text */
+    }
+  }
+  
+  /* media query for even smaller screens */
+  @media (max-width: 480px) {
+      nav a {
+          width: 75%;
+      }
+  }
+
